@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "4b4f83f0-1060-4113-b238-05f7d297cf0e",
+		"name": "test-rest-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25467580"
+	},
+	"item": [
+		{
+			"name": "/",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "calculator",
+			"item": [
+				{
+					"name": "plus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/calculator/plus?a=111&b=962",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"plus"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "111"
+								},
+								{
+									"key": "b",
+									"value": "962"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"a\": 171,\n    \"b\": 359\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculator/plus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"plus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "minus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/calculator/minus?a=500&b=412",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"minus"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "500"
+								},
+								{
+									"key": "b",
+									"value": "412"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "minus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"a\": 777,\n    \"b\": 370\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculator/minus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"minus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multiply",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/calculator/multiply?a=17&b=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"multiply"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "17"
+								},
+								{
+									"key": "b",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multiply",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"a\": 31,\n    \"b\": 13\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculator/multiply",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"multiply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "divide",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/calculator/divide?a=6387&b=90",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"divide"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "6387"
+								},
+								{
+									"key": "b",
+									"value": "90"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "divide",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"a\": 3707,\n    \"b\": 71\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculator/divide",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"divide"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modulus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/calculator/modulus?a=191&b=11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"modulus"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "191"
+								},
+								{
+									"key": "b",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modulus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"a\": 197,\n    \"b\": 80\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculator/modulus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"modulus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "basic-all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/calculator/basic-all?a=100&b=22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"basic-all"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "100"
+								},
+								{
+									"key": "b",
+									"value": "22"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "basic-all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"a\": 603,\n    \"b\": 210\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculator/basic-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator",
+								"basic-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
