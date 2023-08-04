@@ -1,9 +1,14 @@
 package com.demo.kiseong.yoo.demo.domain.calculator.core;
 
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@Setter
 public class BasicArithmeticEntity {
 
-    private final Long a;
-    private final Long b;
+    private Long a;
+    private Long b;
 
     public BasicArithmeticEntity(final Long a, final Long b) {
         this.a = a;
