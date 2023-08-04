@@ -1,37 +1,31 @@
 package com.demo.kiseong.yoo.demo.domain.calculator.core;
 
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@NoArgsConstructor
-@Setter
-public class BasicArithmeticEntity {
+public record BasicArithmeticEntity(
+    @JsonProperty(required = true)
+    Long a,
+    @JsonProperty(required = true)
+    Long b
+) {
 
-    private Long a;
-    private Long b;
-
-    public BasicArithmeticEntity(final Long a, final Long b) {
-        this.a = a;
-        this.b = b;
-    }
-
-    public final Long plus() {
+    public Long plus() {
         return a + b;
     }
 
-    public final Long minus() {
+    public Long minus() {
         return a - b;
     }
 
-    public final Long multiply() {
+    public Long multiply() {
         return a * b;
     }
 
-    public final Long divide() {
+    public Long divide() {
         return a / b;
     }
 
-    public final Long modulus() {
+    public Long modulus() {
         return a % b;
     }
 
