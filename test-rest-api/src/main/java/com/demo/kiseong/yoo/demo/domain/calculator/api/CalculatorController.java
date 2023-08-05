@@ -60,7 +60,7 @@ public class CalculatorController {
 
     @GetMapping("divide")
     @DefaultApiResponses
-    public final ResponseEntity<Long> divide(@RequestParam final long a, @RequestParam final Long b) {
+    public final ResponseEntity<Long> divide(@RequestParam final long a, @RequestParam final long b) {
         paramValidateService.validate(ParamValidateService.ValidationType.divisorNotZero, "b", b);
         return ResponseEntity.ok(calculatorService.divide(a, b));
     }
