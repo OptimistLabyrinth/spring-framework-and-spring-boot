@@ -1,18 +1,18 @@
-package com.demo.kiseong.yoo.demo.domain.calculator.core;
+package com.demo.kiseong.yoo.demo.domain.calculator.core.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record BasicArithmeticAllResult(
     @JsonProperty(required = true)
-    Long plus,
+    long plus,
     @JsonProperty(required = true)
-    Long minus,
+    long minus,
     @JsonProperty(required = true)
-    Long multiply,
+    long multiply,
     @JsonProperty(required = true)
-    Long divide,
+    long divide,
     @JsonProperty(required = true)
-    Long modulus
+    long modulus
 ) {
 
 }
