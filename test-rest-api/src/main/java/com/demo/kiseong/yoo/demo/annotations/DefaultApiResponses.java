@@ -24,7 +24,7 @@ import java.lang.annotation.Target;
             schema = @Schema(
                 description = "If it is constraint violation error -> property name: field name <br />" +
                     "If it is exception of other types -> property name: message <br />",
-                oneOf = {DefaultApiResponses.ErrorFormatBadRequestConstraintViolation.class, DefaultApiResponses.ErrorFormatBadRequestOtherExceptions.class}
+                oneOf = {DefaultApiResponses.ErrorFormatBadRequestConstraintViolation.class, DefaultApiResponses.ErrorFormat.class}
             )
         )
     ),
@@ -47,13 +47,6 @@ public @interface DefaultApiResponses {
         @JsonProperty(required = true)
         @Schema(example = "constraint violation message")
         private final String fieldName;
-    }
-
-    @RequiredArgsConstructor
-    class ErrorFormatBadRequestOtherExceptions {
-        @JsonProperty(required = true)
-        @Schema(example = "exception error message")
-        private final String message;
     }
 
 }
