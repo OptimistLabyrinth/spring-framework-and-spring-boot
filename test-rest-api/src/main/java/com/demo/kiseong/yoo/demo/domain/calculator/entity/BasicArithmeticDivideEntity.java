@@ -1,5 +1,6 @@
-package com.demo.kiseong.yoo.demo.domain.calculator.core.domain;
+package com.demo.kiseong.yoo.demo.domain.calculator.entity;
 
+import com.demo.kiseong.yoo.demo.validation.NotZero;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -11,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class BasicArithmeticEntity {
+public class BasicArithmeticDivideEntity {
 
     @JsonProperty(required = true)
     @NotNull
@@ -19,6 +20,7 @@ public class BasicArithmeticEntity {
 
     @JsonProperty(required = true)
     @NotNull
+    @NotZero
     private Long b;
 
     public long plus() {
@@ -31,6 +33,14 @@ public class BasicArithmeticEntity {
 
     public long multiply() {
         return a * b;
+    }
+
+    public long divide() {
+        return a / b;
+    }
+
+    public long modulus() {
+        return a % b;
     }
 
 }

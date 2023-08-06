@@ -2,8 +2,8 @@ package com.demo.kiseong.yoo.demo.domain.calculator.api;
 
 import com.demo.kiseong.yoo.demo.annotations.DefaultApiResponses;
 import com.demo.kiseong.yoo.demo.domain.calculator.core.*;
-import com.demo.kiseong.yoo.demo.domain.calculator.core.domain.BasicArithmeticDivideEntity;
-import com.demo.kiseong.yoo.demo.domain.calculator.core.domain.BasicArithmeticEntity;
+import com.demo.kiseong.yoo.demo.domain.calculator.entity.BasicArithmeticDivideEntity;
+import com.demo.kiseong.yoo.demo.domain.calculator.entity.BasicArithmeticEntity;
 import com.demo.kiseong.yoo.demo.domain.calculator.core.dto.BasicArithmeticAllResult;
 import com.demo.kiseong.yoo.demo.domain.calculator.core.validation.ParamValidateService;
 import jakarta.validation.Valid;
