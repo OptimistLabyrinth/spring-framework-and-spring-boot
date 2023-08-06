@@ -19,7 +19,14 @@ import java.lang.annotation.Target;
     @ApiResponse(
         responseCode = "400",
         description = "Bad Request",
-        content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = DefaultApiResponses.ErrorFormat.class))
+        content = @Content(
+            mediaType = MediaType.APPLICATION_JSON_VALUE,
+            schema = @Schema(
+                description = "If it is constraint violation error -> property name: field name <br />" +
+                    "If it is exception of other types -> property name: message <br />",
+                oneOf = {DefaultApiResponses.ErrorFormatBadRequestConstraintViolation.class, DefaultApiResponses.ErrorFormatBadRequestOtherExceptions.class}
+            )
+        )
     ),
     @ApiResponse(
         responseCode = "500",
@@ -31,7 +38,21 @@ public @interface DefaultApiResponses {
 
     @RequiredArgsConstructor
     class ErrorFormat {
+        @JsonProperty(value = "message", required = true)
+        private final String message;
+    }
+
+    @RequiredArgsConstructor
+    class ErrorFormatBadRequestConstraintViolation {
         @JsonProperty(required = true)
+        @Schema(example = "constraint violation message")
+        private final String fieldName;
+    }
+
+    @RequiredArgsConstructor
+    class ErrorFormatBadRequestOtherExceptions {
+        @JsonProperty(required = true)
+        @Schema(example = "exception error message")
         private final String message;
     }
 
