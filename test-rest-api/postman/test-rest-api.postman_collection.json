@@ -70,7 +70,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"a\": 171,\n    \"b\": 359\n}",
+							"raw": "{\n    \"a\": 171\n    ,\n    \"b\": 369\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -188,7 +188,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"a\": 31,\n    \"b\": 13\n}",
+							"raw": "{\n    \"a\": 31\n    ,\n    \"b\": 13\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -216,7 +216,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/calculator/divide?a=6387&b=90",
+							"raw": "http://localhost:8080/calculator/divide?a=6387&b=0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -233,7 +233,7 @@
 								},
 								{
 									"key": "b",
-									"value": "90"
+									"value": "0"
 								}
 							]
 						}
@@ -247,7 +247,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"a\": 3707,\n    \"b\": 71\n}",
+							"raw": "{\n    \"a\": 3707\n    ,\n    \"b\": 0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -275,7 +275,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/calculator/modulus?a=191&b=11",
+							"raw": "http://localhost:8080/calculator/modulus?a=191&b=0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -292,7 +292,7 @@
 								},
 								{
 									"key": "b",
-									"value": "11"
+									"value": "0"
 								}
 							]
 						}
@@ -306,7 +306,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"a\": 197,\n    \"b\": 80\n}",
+							"raw": "{\n    \"a\": 197\n    ,\n    \"b\": 0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -334,7 +334,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/calculator/basic-all?a=100&b=22",
+							"raw": "http://localhost:8080/calculator/basic-all?a=100&b=23",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -351,7 +351,7 @@
 								},
 								{
 									"key": "b",
-									"value": "22"
+									"value": "23"
 								}
 							]
 						}
@@ -365,7 +365,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"a\": 603,\n    \"b\": 210\n}",
+							"raw": "{\n    \"a\": 603\n    ,\n    \"b\": 11\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -382,6 +382,127 @@
 							"path": [
 								"calculator",
 								"basic-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Raymond\",\n    \"lastName\": \"Yoo\",\n    \"email\": \"raymond-yoo@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Raymond 2\",\n    \"lastName\": \"Yoo 2\",\n    \"email\": \"raymond-yoo-02@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"1"
 							]
 						}
 					},

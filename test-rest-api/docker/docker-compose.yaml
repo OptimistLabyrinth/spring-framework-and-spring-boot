@@ -1,0 +1,37 @@
+# Use root/example as user/password credentials
+version: '3.8'
+
+name: test-rest-api
+services:
+  test-rest-api-mysql:
+    image: mysql:8.1.0
+    volumes:
+      - type: volume
+        source: test-rest-api-mysql-volume
+        target: /var/lib/mysql
+    env_file:
+        - ./.env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - target: 3306
+        published: 13306
+        protocol: tcp
+        mode: host
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 10s
+    networks:
+      - test_rest_api_net
+
+volumes:
+  test-rest-api-mysql-volume:
+
+networks:
+  test_rest_api_net:
