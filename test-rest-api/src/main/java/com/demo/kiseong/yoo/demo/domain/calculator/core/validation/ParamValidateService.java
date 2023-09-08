@@ -11,18 +11,18 @@ public class ParamValidateService {
     @RequiredArgsConstructor
     @Getter
     public enum ValidationType {
-        divisorNotZero(1);
+        DIVISOR_NOT_ZERO(1);
 
         private final int value;
     }
 
-    public static final String divisorNotZeroMessage = "divisor must not be zero";
+    public static final String DIVISOR_NOT_ZERO_MESSAGE = "divisor must not be zero";
 
     @SuppressWarnings({"SwitchStatementWithTooFewBranches", "EnhancedSwitchMigration", "UnusedReturnValue"})
     @SneakyThrows
     public ParamValidateService validate(ValidationType validationType, final String fieldName, final long value) {
         switch (validationType) {
-            case divisorNotZero:
+            case DIVISOR_NOT_ZERO:
                 divisorNotZero(fieldName, value);
                 break;
             default:
@@ -33,7 +33,7 @@ public class ParamValidateService {
 
     public void divisorNotZero(final String fieldName, final long value) {
         if (value == 0) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, new ErrorDivisorNotZero(fieldName, divisorNotZeroMessage).toString());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, new ErrorDivisorNotZero(fieldName, DIVISOR_NOT_ZERO_MESSAGE).toString());
         }
     }
 

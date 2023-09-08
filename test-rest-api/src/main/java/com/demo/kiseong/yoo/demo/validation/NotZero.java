@@ -14,7 +14,7 @@ import java.lang.annotation.*;
 @Documented
 public @interface NotZero {
 
-    String message() default ParamValidateService.divisorNotZeroMessage;
+    String message() default ParamValidateService.DIVISOR_NOT_ZERO_MESSAGE;
 
     Class<?>[] groups() default {};
 

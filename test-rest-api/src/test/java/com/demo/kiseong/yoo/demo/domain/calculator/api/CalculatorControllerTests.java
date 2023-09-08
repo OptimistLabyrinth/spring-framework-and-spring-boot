@@ -5,9 +5,8 @@ import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 
 import java.util.HashMap;
@@ -20,16 +19,14 @@ import static org.hamcrest.Matchers.equalTo;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CalculatorControllerTests {
 
-    @Value(value = "${local.server.port}")
+    @LocalServerPort
     private int port;
-    @Autowired
-    private CalculatorController calculatorController;
+
     final int a = 100;
     final int b = 25;
 
     @BeforeEach
     public void setup() {
-        RestAssured.baseURI = "http://localhost";
         RestAssured.port = port;
     }
 

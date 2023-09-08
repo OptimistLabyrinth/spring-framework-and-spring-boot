@@ -18,8 +18,6 @@ public class IndexControllerTests {
     @Value(value = "${local.server.port}")
     private int port;
     @Autowired
-    private IndexController indexController;
-    @Autowired
     private TestRestTemplate restTemplate;
 
     @BeforeEach
@@ -33,16 +31,17 @@ public class IndexControllerTests {
         final var responseString = given()
             .when().get("/")
             .then().extract().body().asString();
-        assertThat(responseString.contains("Welcome")).isTrue();
+        assertThat(responseString).contains("Welcome");
     }
 
     @Test
     public void greetingShouldReturnWelcomingMessageTestRestTemplate() {
         final var responseEntity = restTemplate.getForEntity(String.format("http://localhost:%d/", port), String.class);
-        assertThat(responseEntity.getStatusCode().equals(HttpStatus.OK)).isTrue();
+        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
         final var responseBody = responseEntity.getBody();
-        assertThat(responseBody).isNotNull();
-        assertThat(responseBody.contains("Welcome")).isTrue();
+        assertThat(responseBody)
+            .isNotNull()
+            .contains("Welcome");
     }
 
 }

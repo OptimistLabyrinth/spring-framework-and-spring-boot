@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -18,7 +17,6 @@ import java.util.*;
 @RestControllerAdvice
 public class ApplicationExceptionHandler {
 
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler({MissingServletRequestParameterException.class})
     public ResponseEntity<Map<String, String>> handleMissingRequired(MissingServletRequestParameterException e) {
         final Map<String, String> errorMap = new HashMap<>();
@@ -26,7 +24,6 @@ public class ApplicationExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMap);
     }
 
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler({MethodArgumentNotValidException.class})
     public ResponseEntity<Map<String, String>> handleInvalidArgument(MethodArgumentNotValidException e) {
         final Map<String, String> errorMap = new HashMap<>();
@@ -36,7 +33,6 @@ public class ApplicationExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMap);
     }
 
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(ResponseStatusException.class)
     public ResponseEntity<Map<String, String>> handleInvalidArgument(ResponseStatusException e) {
         final Map<String, String> errorMap = new HashMap<>();

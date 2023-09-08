@@ -61,7 +61,7 @@ public class CalculatorController {
     @GetMapping("divide")
     @DefaultApiResponses
     public final ResponseEntity<Long> divide(@RequestParam final long a, @RequestParam final long b) {
-        paramValidateService.validate(ParamValidateService.ValidationType.divisorNotZero, "b", b);
+        paramValidateService.validate(ParamValidateService.ValidationType.DIVISOR_NOT_ZERO, "b", b);
         return ResponseEntity.ok(calculatorService.divide(a, b));
     }
 
@@ -74,7 +74,7 @@ public class CalculatorController {
     @GetMapping("modulus")
     @DefaultApiResponses
     public final ResponseEntity<Long> modulus(@RequestParam final long a, @RequestParam final long b) {
-        paramValidateService.validate(ParamValidateService.ValidationType.divisorNotZero, "b", b);
+        paramValidateService.validate(ParamValidateService.ValidationType.DIVISOR_NOT_ZERO, "b", b);
         return ResponseEntity.ok(calculatorService.modulus(a, b));
     }
 
@@ -87,7 +87,7 @@ public class CalculatorController {
     @GetMapping("basic-all")
     @DefaultApiResponses
     public final ResponseEntity<BasicArithmeticAllResult> basicAll(@RequestParam final long a, @RequestParam final long b) {
-        paramValidateService.validate(ParamValidateService.ValidationType.divisorNotZero, "b", b);
+        paramValidateService.validate(ParamValidateService.ValidationType.DIVISOR_NOT_ZERO, "b", b);
         return ResponseEntity.ok(calculatorService.basicAll(a, b));
     }
 
