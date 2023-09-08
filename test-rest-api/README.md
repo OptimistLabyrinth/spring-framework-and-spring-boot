@@ -39,7 +39,7 @@ now run the command at the project root
 if you are at a different location than project root, you should edit the path to compose file(docker-compose.yaml)
 
 > ```bash
-> $ docker compose -f docker/docker-compose.yaml up
+> $ docker compose -f docker/docker-compose.yaml up -d
 >```
 
 ## Setup Environment Variables
